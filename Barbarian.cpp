@@ -1,6 +1,6 @@
 #include "Barbarian.hpp"
 
-int Barbarian::attack(Character* target) {
+int Barbarian::attack(Character& target) {
 
 	int attack1;
 	int attack2;
@@ -12,7 +12,7 @@ int Barbarian::attack(Character* target) {
 
 	std::cout << "Barbarian attacks for " << attack1 << " and " << attack2 << std::endl;
 
-	target->defend(totalDamage);
+	target.defend(totalDamage);
 
 	return totalDamage;
 	

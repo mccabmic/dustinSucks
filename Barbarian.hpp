@@ -12,7 +12,7 @@ class Barbarian:  public Character {
 		Die barbDie2 = Die(6);
 
 	public:
-		int attack(Character* target);
+		int attack(Character& target);
 		void defend(int attackDamage);
 		int status();
 		Barbarian()

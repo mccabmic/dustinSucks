@@ -22,6 +22,7 @@ public:
 	Die(int sides);
 	virtual int roll();
 	virtual bool isLoaded();
+	virtual ~Die() {};
 
 };
 

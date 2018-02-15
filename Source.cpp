@@ -9,12 +9,12 @@ int main() {
 	Character *pOtherchar;
 
 	pChar = new Barbarian;
-	pOtherchar = new Barbarian;
+	pOtherchar = nullptr;
 
 	cout << "Before attack: otherBarb has: " << pOtherchar->status() << " HP" << endl;
 
 	while (pOtherchar->status() > 0) {
-		cout << pChar->attack(pOtherchar) << endl;
+		cout << pChar->attack(*pOtherchar) << endl;
 		cout << "After attack: otherBarb has: " << pOtherchar->status() << "HP" << endl;
 	}
 

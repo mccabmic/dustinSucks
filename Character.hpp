@@ -13,7 +13,7 @@ class Character
 		Character(int health, int defense): hp(health), armor(defense) {}
 		virtual ~Character() {}
 
-		virtual int attack(Character* target) = 0;
+		virtual int attack(Character& target) = 0;
 		virtual void defend(int attackDamage) = 0;
 		virtual int status() = 0;
 };
