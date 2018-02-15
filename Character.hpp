@@ -1,6 +1,8 @@
 #ifndef CHRACTER_HPP
 #define CHARACTER_HPP
 
+#include "Die.hpp"
+
 class Character
 {
 	protected:
