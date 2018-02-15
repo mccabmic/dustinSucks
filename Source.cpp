@@ -18,6 +18,10 @@ int main() {
 		cout << "After attack: otherBarb has: " << pOtherchar->status() << "HP" << endl;
 	}
 
+	delete pChar;
+	delete pOtherchar;
+
+
 	cout << "Hello World!" << endl;
 	cin.get();
 	return 0;

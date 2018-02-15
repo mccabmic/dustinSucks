@@ -4,11 +4,12 @@
 class Character
 {
 	protected:
-		int hp = 20;
+		int hp = 0; //Strength Points;
+		int armor = 0;
 		bool isDead = false;
 	public:
-		// Character();
-		// virtual ~Character();
+		Character(int health, int defense): hp(health), armor(defense) {}
+		virtual ~Character() {}
 
 		virtual int attack(Character* target) = 0;
 		virtual void defend(int attackDamage) = 0;

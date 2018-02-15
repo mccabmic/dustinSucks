@@ -7,7 +7,7 @@ int Barbarian::attack(Character* target) {
 }
 
 void Barbarian::defend(int attackDamage) {
-	int totalDamage = attackDamage - defense;	
+	int totalDamage = attackDamage - armor;	
 	hp = hp - totalDamage;
 
 	if (hp <= 0) {	
