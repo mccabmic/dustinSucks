@@ -1,10 +1,9 @@
-#ifndef CHRACTER_HPP
+#ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
 #include "Die.hpp"
 
-class Character
-{
+class Character {
 	protected:
 		int hp = 0; //Strength Points;
 		int armor = 0;
@@ -19,6 +18,6 @@ class Character
 };
 
 
-#endif // !CHRACTER_HPP
+#endif // !CHARACTER_HPP
 
 

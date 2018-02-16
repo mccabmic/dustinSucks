@@ -18,7 +18,7 @@ class Barbarian:  public Character {
 		Barbarian()
 			: Character(12, 0){}
 				
-		//~Barbarian() {};
+		virtual ~Barbarian() {};
 	
 };
 

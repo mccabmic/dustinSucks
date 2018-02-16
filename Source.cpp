@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Barbarian.hpp"
+#include "HarryPotter.hpp"
 
 using namespace std;
 
@@ -9,7 +10,7 @@ int main() {
 	Character *pOtherchar;
 
 	pChar = new Barbarian;
-	pOtherchar = nullptr;
+	pOtherchar = new HarryPotter;
 
 	cout << "Before attack: otherBarb has: " << pOtherchar->status() << " HP" << endl;
 
