@@ -1,6 +1,11 @@
 #include "HarryPotter.hpp"
 
 int HarryPotter::attack(Character& target) {
+
+	if (&target == nullptr) {
+		return 0;
+	}
+
 	int attack1;
 	int attack2;
 
@@ -11,36 +16,34 @@ int HarryPotter::attack(Character& target) {
 
 	std::cout << "Harry Potter attacks for " << attack1 << " and " << attack2 << std::endl;
 
-	target.defend(totalDamage);
-
-	return totalDamage;
+	int effectiveDamage = target.defend(totalDamage);
+	return effectiveDamage;
 
 }
 
-void HarryPotter::defend(int attackDamage) {
+int HarryPotter::defend(int &attackDamage) {
 	int defend1;
 	int defend2;
 
 	defend1 = potterDie.roll();
 	defend2 = potterDie2.roll();
 
-	cout << "Harry Potter defended for " << defend1 << " and " << defend2 << std::endl;
+	cout << "Enemy Harry Potter defended for " << defend1 << " and " << defend2 << std::endl;
 
 	int totalDamage = attackDamage - armor - defend1 - defend2;
 
-	if (totalDamage > 0) // character should not be able to get health back from defense
+	if (totalDamage > 0) { // character should not be able to get health back from defense
 		hp = hp - totalDamage;
+	}
+	else {
+		totalDamage = 0;
+	}
 
+	// check if Potter has self-resurrection
 	if (hp <= 0 && hasRes) {
 		hasRes = false;
 		hp = 20;
 	}
 
-}
-
-int HarryPotter::status() {
-	if (isDead) {
-		return 0;
-	}
-	return hp;
+	return totalDamage;
 }

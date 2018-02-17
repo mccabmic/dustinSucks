@@ -2,6 +2,11 @@
 
 int Barbarian::attack(Character& target) {
 
+	if (&target == nullptr) {
+		return 0;
+	}
+
+
 	int attack1;
 	int attack2;
 
@@ -12,36 +17,30 @@ int Barbarian::attack(Character& target) {
 
 	std::cout << "Barbarian attacks for " << attack1 << " and " << attack2 << std::endl;
 
-	target.defend(totalDamage);
-
-	return totalDamage;
+	int effectiveDamage = target.defend(totalDamage);
+	return effectiveDamage;
 	
 }
 
-void Barbarian::defend(int attackDamage) {
+int Barbarian::defend(int &attackDamage) {
 
 	int defend1;
 	int defend2;
 
 	defend1 = barbDie1.roll();
 	defend2 = barbDie2.roll();
-
-	cout << "Barbarian defended for " << defend1 << " and " << defend2 << std::endl;
+	
+	std::cout << "Enemy Barbarian " << "(hp: " << getHP() << " armor: " << getArmor()
+		<< ") rolls a defense roll of " << defend1 << " and " << defend2 << std::endl;
 
 	int totalDamage = attackDamage - armor - defend1 - defend2;
 	
-	if (totalDamage > 0) // character should not be able to get health back from defense
+	if (totalDamage > 0) { // character should not be able to get health back from defense
 		hp = hp - totalDamage;
-
-	if (hp <= 0) {	
-		std::cout << "Dead!" << std::endl;
-		isDead = true;
 	}
-}
-
-int Barbarian::status(){
-	if (isDead) {
-		return 0;
+	else {
+		totalDamage = 0;
 	}
-	return hp;
+
+	return totalDamage;
 }

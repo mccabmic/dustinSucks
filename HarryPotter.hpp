@@ -17,8 +17,7 @@ class HarryPotter:   public Character {
 			: Character(10, 0) {}
 
 		int attack(Character& target);
-		void defend(int attackDamage);
-		int status();
+		int defend(int& attackDamage);
 
 		virtual ~HarryPotter() {};
 };

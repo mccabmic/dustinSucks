@@ -13,8 +13,7 @@ class Barbarian:  public Character {
 
 	public:
 		int attack(Character& target);
-		void defend(int attackDamage);
-		int status();
+		int defend(int& attackDamage);
 		Barbarian()
 			: Character(12, 0){}
 				

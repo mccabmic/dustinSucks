@@ -8,42 +8,33 @@ int Vampire::attack(Character& target) {
 
 	int attack = hitDie.roll();
 
-	std::cout << "Vampire attacks for " << attack << "damage!" << std::endl;
-	target.defend(attack);
-	return attack;
+	std::cout << "Vampire attacks for " << attack << std::endl;
 
-
+	int effectiveDamage = target.defend(attack);
+	return effectiveDamage;
 }
 
-void Vampire::defend(int attackDamage) {
+int Vampire::defend(int &attackDamage) {
 
 	int defend1;
 	defend1 = saveDie.roll();
+
+	std::cout << "Enemy Vampire " <<"(hp: " << getHP() << " armor: " << getArmor()
+		<< ") rolls a defense roll of " << defend1 << std::endl;
 
 	int totalDamage = attackDamage - armor - defend1;
 
 	Die coinToss = Die(2);
 
 	int roll = coinToss.roll();
-	if (roll == 1) {
-		std::cout << "Roll was: " << roll << std::endl;
-		if (totalDamage > 0) // character should not be able to get health back from defense
-			hp = hp - totalDamage;
+
+	if (totalDamage > 0) {
+		if (roll == 1) {
+			hp = hp - totalDamage; //character should not be able to get health back from defense
+		}
+		else {
+			totalDamage = 0;
+		}
 	}
-	else {
-		std::cout << "Roll was: " << roll << std::endl;
-		std::cout << "No damage taken!" << std::endl;
-	}
-
-}
-
-
-
-
-int Vampire::status(){
-	if (isDead) {
-		return 0;
-}
-	else
-		return hp;
+	return totalDamage;
 }

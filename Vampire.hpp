@@ -12,10 +12,7 @@ class Vampire:	public Character {
 		Vampire()
 			:Character(18, 1) {}
 		int attack(Character& attackTarget);
-		void defend(int attackDamage);
-		int status();
-
-
+		int defend(int &attackDamage);
 };
 
 
