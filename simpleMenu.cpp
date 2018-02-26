@@ -1,6 +1,6 @@
 /*************************
 Author:Michael McCabe
-Date: February 11, 2018
+Date: February 18, 2018
 IDE: Visual Studio
 **************************/
 
@@ -100,7 +100,6 @@ int simpleMenu::getInt(const std::string prompt) {
 		std::getline(std::cin, input);
 
 		// Loop through all characters and determine if they are a digit or not
-		// TODO - make a flag for positive or negatives allowed
 		for (unsigned i = 0; i < input.length(); i++) {
 			if (!isdigit(input[i])) {
 				std::cout << "Invalid input" << std::endl;

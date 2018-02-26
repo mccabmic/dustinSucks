@@ -33,6 +33,7 @@ int Vampire::defend(int &attackDamage) {
 			hp = hp - totalDamage; //character should not be able to get health back from defense
 		}
 		else {
+			std::cout << "I am fat" << std::endl;
 			totalDamage = 0;
 		}
 	}

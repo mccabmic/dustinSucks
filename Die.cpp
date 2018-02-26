@@ -9,7 +9,6 @@ Die  can roll, which generates a random number, seeded based on time at construc
 #include "Die.hpp"
 
 Die::Die(int s) {
-	srand(time(NULL));
 	sides = s;
 }
 

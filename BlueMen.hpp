@@ -1,3 +1,9 @@
+/*************************
+Author:Michael McCabe
+Date: February 18, 2018
+IDE: Visual Studio
+**************************/
+
 #ifndef BLUEMEN_HPP
 #define BLUEMEN_HPP
 

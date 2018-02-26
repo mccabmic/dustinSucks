@@ -1,3 +1,9 @@
+/*************************
+Author:Michael McCabe
+Date: February 18, 2018
+IDE: Visual Studio
+**************************/
+
 #include "BlueMen.hpp"
 
 int BlueMen::attack(Character& target) {
@@ -29,7 +35,7 @@ int BlueMen::defend(int &attackDamage) {
 		std::cout << "Enemy Blue men " << "(hp: " << getHP() << " armor: " << getArmor()
 			<< ") rolls a defense roll of " << roll << std::endl;
 
-		defense = +roll;
+		defense += roll;
 	}
 
 	int totalDamage = attackDamage - armor - defense;
@@ -42,11 +48,13 @@ int BlueMen::defend(int &attackDamage) {
 		attackDamage = 0;
 	}
 
+	// pop off die for each 4 hp lost
 	if (hp <= 8 && hp > 4) {
 		if (hand.size() >= 3)
 			hand.pop_back();
 	}
 
+	// massive damage
 	if (hp <= 4 && hp > 0) {
 		if (hand.size() >= 3) {
 			hand.pop_back();

@@ -1,3 +1,9 @@
+/*************************
+Author:Michael McCabe
+Date: February 18, 2018
+IDE: Visual Studio
+**************************/
+
 #ifndef VAMPIRE_HPP
 #define VAMPIRE_HPP
 
@@ -13,6 +19,7 @@ class Vampire:	public Character {
 			:Character(18, 1) {}
 		int attack(Character& attackTarget);
 		int defend(int &attackDamage);
+		~Vampire(){}
 };
 
 
